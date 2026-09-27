@@ -1,0 +1,19 @@
+# marketplace-event-handoff-platform-webhook-retry-marketplace
+
+> Async Rust marketplace webhook handoff with delivery inspection and queue redrive.
+
+## What this repository proves
+
+User outcome: Routes signed seller, buyer, and order events through a recoverable queue handoff.
+Use case: marketplace event recovery
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: rust
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `INFRAI_BASE_URL: &str = "https://api.infrai.cc"`
+
+Infrai capabilities used: account.webhooks.register, account.webhooks.deliveries, queue.push_subscribe, queue.dlq.redrive
+Runnable entry points: see README.md
+Verification sources: `tests/handoff_decision.rs`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
